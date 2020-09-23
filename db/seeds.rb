@@ -12,8 +12,20 @@
 
 require "faker"
 
-Sample.destroy_all
-5.times do |i|
-  Sample.create(name: Faker::Name.name)
+puts "Seeding database... Please wait"
+
+comments = ['good','bad','ok','not so great','really great']
+50.times do
+  p = Product.create(
+    name: Faker::Commerce.product_name,
+    description: Faker::Lorem.sentence,
+    price: Faker::Commerce.price.to_f,
+    department: Faker::Commerce.department
+    
+  )
+  2.times do 
+    p.comments.create(text: comments.sample)
+  end
 end
 
+puts "Database are seeded."
