@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
-import { Item } from "semantic-ui-react";
+import { Item, Label } from "semantic-ui-react";
 
 const Products = () => {
     //Set up States
@@ -15,15 +15,24 @@ const Products = () => {
         .catch((err)=>{
             alert("eRr0R!")
         })
-    }, []) 
+    }, []) // Again notice this is array because its the type we want to put it into
 
     const renderProducts = () => {
-        return <h1> test </h1>
+        return products.map((product) => (
+            <Item key={product.id}>
+                <Item.Content>
+                <Item.Header as='a'>{product.name} <Label>View Product</Label> </Item.Header>
+                <Item.Meta>Department: {product.department}</Item.Meta>
+                <Item.Description>Description: {product.description}</Item.Description>
+                <Item.Extra><Label>{product.price}</Label> &#9998; &#128465; </Item.Extra>
+                </Item.Content>
+            </Item>
+        ))
     }
 
 return (
     <div>
-        products
+        <Item.Group>{renderProducts()}</Item.Group>
     </div>
 );
 }
