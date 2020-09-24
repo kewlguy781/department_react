@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import { Item, Label } from "semantic-ui-react";
+import { Link } from "react-router-dom"
 
 const Products = () => {
     //Set up States
@@ -21,10 +22,10 @@ const Products = () => {
         return products.map((product) => (
             <Item key={product.id}>
                 <Item.Content>
-                <Item.Header as='a'>{product.name} <Label>View Product</Label> </Item.Header>
+                <Item.Header as='a'>{product.name} <Label as={Link} to={`/products/${product.id}`}>View Product</Label> </Item.Header>
                 <Item.Meta>Department: {product.department}</Item.Meta>
                 <Item.Description>Description: {product.description}</Item.Description>
-                <Item.Extra><Label>{product.price}</Label> &#9998; &#128465; </Item.Extra>
+                <Item.Extra><Label>{product.price}</Label> <Label>&#9998;</Label> <Label>&#128465;</Label> </Item.Extra>
                 </Item.Content>
             </Item>
         ))
