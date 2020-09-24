@@ -5,7 +5,7 @@ const NavBar = () => {
 return ( <>
     <div style={styles.navbar}>
     <Link to="/">Home</Link>  <span></span>
-    <Link to="/Departments">Departments</Link>  <span></span>
+    <Link to="/products">Department Products</Link>  <span></span>
     <a href="http://localhost:3001/rails/info/routes">Rail Routes</a>  <span></span>
     <a href="http://localhost:3001/api/products">All Products</a>  <span></span>
     <a href="http://localhost:3001/api/comments/all">All Comments</a>  <span></span>

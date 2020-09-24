@@ -5,6 +5,7 @@ import './App.css';
 import {Route, Switch} from "react-router-dom";
 import {Container} from "semantic-ui-react"
 import Home from "./components/Home"
+import Products from "./deptprods/Products"
 
 function App() {
   return (
@@ -12,12 +13,11 @@ function App() {
     <NavBar />
     <Container>
       <Switch>
-      <Home />
-      <Route exact path="/" componet={Home} />
-      {/* <Route exact path="/" componet={Home} />
-      <Route exact path="/" componet={Home} />
-      <Route exact path="/" componet={Home} />
-      <Route exact path="/" componet={Home} />
+      <Route exact path="/" component={Home} />
+      <Route exact path="/products" component={Products} />
+      {/* <Route exact path="/" component={Home} />
+      <Route exact path="/" component={Home} />
+      <Route exact path="/" component={Home} />
        */}
 </Switch>
 
