@@ -8,19 +8,18 @@ const Products = () => {
     useEffect(() => {
         axios
         .get("/api/products")
-        .then ((res) => {
+        .then((res) => {
             setProducts(res.data);
-            console.log('res.data :>> ', res.data);
+            console.log('res.data :>> ', res.data);  
         })
-        .catch ((err)=>{
+        .catch((err)=>{
             alert("eRr0R!")
         })
-    })
+    }, []) 
 
     const renderProducts = () => {
         return <h1> test </h1>
     }
-
 
 return (
     <div>
