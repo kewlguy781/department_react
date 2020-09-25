@@ -1,5 +1,8 @@
 class Api::CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :update, :destroy]
+  before_action :set_product
+  #Note: add relationship in before_action!!!!!!!!
+
   def index
     render json: @product.comments
   end
@@ -46,4 +49,5 @@ class Api::CommentsController < ApplicationController
   def set_comment
     @comment = @product.comment.find(params[:id])
   end
+
 end
