@@ -18,7 +18,6 @@ const ProductView = ({match, history}) => {
     
     Axios.get(`/api/products/${match.params.id}/comments`)
     .then((res) => {
-      debugger;
         console.log(res.data)
         setComments(res.data)
     })
