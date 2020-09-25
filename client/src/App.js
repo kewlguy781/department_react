@@ -6,6 +6,7 @@ import {Route, Switch} from "react-router-dom";
 import {Container} from "semantic-ui-react"
 import Home from "./components/Home"
 import Products from "./deptprods/Products"
+import ProductView from "./deptprods/ProductView"
 
 function App() {
   return (
@@ -15,8 +16,8 @@ function App() {
       <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/products" component={Products} />
+      <Route exact path="/products/:id" component={ProductView} />
       {/* <Route exact path="/" component={Home} />
-      <Route exact path="/" component={Home} />
       <Route exact path="/" component={Home} />
        */}
 </Switch>
@@ -31,8 +32,9 @@ function App() {
 export default App;
 
 //TODO List
-//Create Department Products Page
-  //update router for department
+//Create Department Products Page *
+  //update router for department *
+  //make sure you push it to state *
 //Create Department Products Form (New only)
 //Create Comment view (<Comment>)
 //Create Department Products View with comments
